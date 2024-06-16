@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # GitHub API URL
+###############
+#About : List of the read users for a particular reposittoey by providing the repository name and repo 
+#Input : Provide the repo owner and Repo name
+#
+#Owner : Abhishek
+###########
+
+helper()
+
 API_URL="https://api.github.com"
 
 # GitHub username and personal access token
@@ -36,6 +45,12 @@ function list_users_with_read_access {
     fi
 }
 
+function helper{
+expected_cmd_args=2
+if[ $# -ne $expected_cmd_args]; then
+echo " Please excute the required script by providing the Owner grop and repo detail in the cmd "
+
+}
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
